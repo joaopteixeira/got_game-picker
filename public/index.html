@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <title>GOT Generator</title>
+
+<script src="vue.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+
+<style>
+    body {
+
+        background-image: url("https://i.imgur.com/5d3T6.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+</style>
+
+</head>
+<body>
+<div id="noki">
+<font color="White" >
+    <div id="exercise">
+<button @click="jogo3" v-bind:style="{'background-color':buttonColor3}">3</button>
+<button @click="jogo4" v-bind:style="{'background-color':buttonColor4}">4</button>
+<button @click="jogo5" v-bind:style="{'background-color':buttonColor5}">5</button> 
+<button @click="jogo6" v-bind:style="{'background-color':buttonColor6}">6</button>
+
+
+<div v-if="jogo == '6'">
+
+    <center>
+    <p>Insira o Nome dos Jogadores </p>
+    -<input type="text" v-on:input="mplayer1">
+
+
+    -<input type="text" v-on:input="mplayer2">
+
+
+    -<input type="text" v-on:input="mplayer3">
+
+
+    -<input type="text" v-on:input="mplayer4">
+
+
+    -<input type="text" v-on:input="mplayer5">
+
+
+    -<input type="text" v-on:input="mplayer6">
+    <br>
+    <br>
+    <button @click="generateHouses"> Start! </button>
+   <br>
+    <div class="row">
+
+
+
+
+        <div class="col-sm">
+
+    <p> {{ player1 }}  {{ house1 }}</p>
+
+    <div v-if="house1  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+
+  <div class="col-sm">
+    <p> {{ player2 }}   {{ house2 }}</p>
+      <div v-if="house2  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+
+  </div>
+
+
+        <div class="col-sm">
+    <p>  {{ player3 }}   {{ house3 }}</p>
+            <div v-if="house3  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+
+
+
+    </div>
+
+    <div class="row">
+
+
+
+
+        <div class="col-sm">
+    <p> {{ player4 }}   {{ house4 }}</p>
+            <div v-if="house4  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+
+        <div class="col-sm">
+    <p> {{ player5 }}   {{ house5 }}</p>
+            <div v-if="house5  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+        <div class="col-sm">
+    <p> {{ player6 }}   {{ house6 }}</p>
+            <div v-if="house6  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+    </div>
+    </center>
+</div>
+
+<div v-if="jogo == '5'">
+
+    <center>
+    <p>Insira o Nome dos Jogadores </p>
+    -<input type="text" v-on:input="mplayer1">
+
+
+    -<input type="text" v-on:input="mplayer2">
+
+
+    -<input type="text" v-on:input="mplayer3">
+
+
+    -<input type="text" v-on:input="mplayer4">
+
+
+    -<input type="text" v-on:input="mplayer5">
+
+    <br>
+    <br>
+    <button @click="generate5Houses"> Start! </button>
+   <br>
+    <div class="row">
+
+
+
+
+        <div class="col-sm">
+
+    <p> {{ player1 }}  {{ house1 }}</p>
+
+    <div v-if="house1  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+    <div v-if="house1  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+
+    <div v-if="house1  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+
+  <div class="col-sm">
+    <p> {{ player2 }}   {{ house2 }}</p>
+      <div v-if="house2  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+      <div v-if="house2  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+
+      <div v-if="house2  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+
+  </div>
+
+
+        <div class="col-sm">
+    <p>  {{ player3 }}   {{ house3 }}</p>
+            <div v-if="house3  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house3  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+
+            <div v-if="house3  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+        <div class="col-sm">
+            <p>  {{ player4 }}   {{ house4 }}</p>
+                    <div v-if="house4  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                    <div v-if="house4  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                    <div v-if="house4  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                    <div v-if="house4  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+        
+                    <div v-if="house4  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+        
+                </div>
+
+
+                <div class="col-sm">
+                    <p>  {{ player5 }}   {{ house5 }}</p>
+                            <div v-if="house5  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                            <div v-if="house5  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                            <div v-if="house5  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                            <div v-if="house5  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+                
+                            <div v-if="house5  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+                
+                        </div>           
+
+
+
+
+    </div>
+
+    <div class="row">
+
+
+
+
+        <div class="col-sm">
+    <p> {{ player4 }}   {{ house4 }}</p>
+            <div v-if="house4  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house4  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+
+        <div class="col-sm">
+    <p> {{ player5 }}   {{ house5 }}</p>
+            <div v-if="house5  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house5  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+        <div class="col-sm">
+    <p> {{ player6 }}   {{ house6 }}</p>
+            <div v-if="house6  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+            <div v-if="house6  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+        </div>
+
+    </div>
+    </center>
+</div>
+
+<div v-if="jogo == '4'">
+
+            <center>
+                <p>Insira o Nome dos Jogadores </p>
+                -<input type="text" v-on:input="quatromplayer1">
+
+
+                -<input type="text" v-on:input="quatromplayer2">
+
+
+                -<input type="text" v-on:input="quatromplayer3">
+
+
+                -<input type="text" v-on:input="quatromplayer4">
+
+
+
+                <br>
+                <br>
+                <button @click="generate4Houses"> Start! </button>
+                <br>
+
+
+                <div class="row">
+
+
+
+                    <div class="col-sm">
+
+                        <p> {{ player1 }}  {{ house1 }}</p>
+
+                        <div v-if="house1  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                        <div v-if="house1  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                        <div v-if="house1  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                        <div v-if="house1  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+                        <div v-if="house1  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+                        <div v-if="house1  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+                    </div>
+
+
+                    <div class="col-sm">
+                        <p> {{ player2 }}   {{ house2 }}</p>
+                        <div v-if="house2  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                        <div v-if="house2  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                        <div v-if="house2  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                        <div v-if="house2  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+                        <div v-if="house2  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+                        <div v-if="house2  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+
+                    </div>
+
+
+                    <div class="col-sm">
+                        <p>  {{ player3 }}   {{ house3 }}</p>
+                        <div v-if="house3  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                        <div v-if="house3  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                        <div v-if="house3  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                        <div v-if="house3  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+                        <div v-if="house3  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+                        <div v-if="house3  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+                    </div>
+
+                    <div class="col-sm">
+                        <p> {{ player4 }}   {{ house4 }}</p>
+                        <div v-if="house4  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                        <div v-if="house4  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                        <div v-if="house4  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+                        <div v-if="house4  == 'Greyjoy'"><h3>We Do Not Sow <h3><img src="https://seeklogo.com/images/H/house-greyjoy-logo-F056778536-seeklogo.com.png">  </div>
+                        <div v-if="house4  == 'Martel'"><h3>Unbowed, Unbent, Unbroken <h3><img src="https://seeklogo.com/images/H/house-martell-logo-7CAF1ACA88-seeklogo.com.png">  </div>
+                        <div v-if="house4  == 'Tyrel'"><h3>Growing Strong <h3><img src="https://seeklogo.com/images/H/house-tyrell-logo-D008C9A129-seeklogo.com.png">  </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+</center></div>
+
+<div v-if="jogo == '3'">
+
+    <center>
+        <p>Insira o Nome dos Jogadores </p>
+        -<input type="text" v-on:input="quatromplayer1">
+
+
+        -<input type="text" v-on:input="quatromplayer2">
+
+
+        -<input type="text" v-on:input="quatromplayer3">
+
+
+        <br>
+        <br>
+        <button @click="generate3Houses"> Start! </button>
+        <br>
+
+
+        <div class="row">
+
+
+
+            <div class="col-sm">
+
+                <p> {{ player1 }}  {{ house1 }}</p>
+
+                <div v-if="house1  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                <div v-if="house1  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                <div v-if="house1  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+
+
+            </div>
+
+
+            <div class="col-sm">
+                <p> {{ player2 }}   {{ house2 }}</p>
+                <div v-if="house2  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                <div v-if="house2  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                <div v-if="house2  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+
+
+            </div>
+
+
+            <div class="col-sm">
+                <p>  {{ player3 }}   {{ house3 }}</p>
+                <div v-if="house3  == 'Stark'"><h3>Winter is Coming <h3><h3></h3><img src="https://seeklogo.com/images/H/house-stark-logo-3D1CBEDC36-seeklogo.com.png">  </div>
+                <div v-if="house3  == 'Lannister'"><h3>Hear me Roar! <h3><img src="https://seeklogo.com/images/H/house-lannister-logo-1BD88EA268-seeklogo.com.png">  </div>
+                <div v-if="house3  == 'Baratheon'"><h3>Ours is the Fury <h3><img src="https://seeklogo.com/images/H/house-baratheon-logo-5CCDDDEE04-seeklogo.com.png">  </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+</center></div>
+
+</div>
+
+
+</center>
+</font>
+
+</font>
+</center>
+</div>
+</body>
+<script src="apptotal.js"></script>

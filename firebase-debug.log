@@ -1,0 +1,29 @@
+[debug] [2019-06-11T13:19:14.362Z] ----------------------------------------------------------------------
+[debug] [2019-06-11T13:19:14.364Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2019-06-11T13:19:14.364Z] CLI Version:   6.11.0
+[debug] [2019-06-11T13:19:14.364Z] Platform:      darwin
+[debug] [2019-06-11T13:19:14.364Z] Node Version:  v10.15.3
+[debug] [2019-06-11T13:19:14.365Z] Time:          Tue Jun 11 2019 14:19:14 GMT+0100 (Western European Summer Time)
+[debug] [2019-06-11T13:19:14.365Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-06-11T13:19:14.384Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-06-11T13:19:14.384Z] > authorizing via signed-in user
+[debug] [2019-06-11T13:19:14.384Z] [iam] checking project js-vue for permissions ["firebase.projects.get"]
+[debug] [2019-06-11T13:19:14.387Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-06-11T13:19:14.387Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-06-11T13:19:14.817Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-11T13:19:14.835Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/js-vue:testIamPermissions  
+
+[debug] [2019-06-11T13:19:15.956Z] <<< HTTP RESPONSE 200
+[debug] [2019-06-11T13:19:15.958Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/js-vue  
+ 
+[debug] [2019-06-11T13:19:17.048Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/joao/Downloads/NewGot'...
+[info] 
+[debug] [2019-06-11T13:19:17.051Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/86726703129/clients/_:getWebAppConfig  
+ 
+[debug] [2019-06-11T13:19:17.847Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
